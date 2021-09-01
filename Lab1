@@ -26,7 +26,7 @@ Reads a real number and outputs its inverse. If 0 is read, writes a warning mess
 
 #include <stdio.h>
 int main(){
-    
+
 float a,b;
 
 printf("Enter a number = ");
@@ -35,7 +35,7 @@ scanf("%f", &a);
 if (a==0.0) 
     printf("You entered 0.\n"); 
 else 
-    printf("The inverse is:%f.\n",b=1/a);
+    printf("The inverse of %f is:%f.\n",b=1/a);
 return 0;
 }
 
@@ -44,3 +44,43 @@ return 0;
 Problem 3
 
 Reads a real number, x, and outputs its sine, i.e. sin x. You need to use math.h and the -lm compile option.
+
+#include <stdio.h>
+
+#include <math.h>
+int main(){
+    
+float a,b;
+
+printf("Enter a real number = ");
+
+scanf("%f", &a);
+if (a==0.0) 
+    printf("You entered 0.\n"); 
+else 
+    printf("The sine of %f is:%f.\n",a,b=sin(a));
+return 0;
+}
+
+
+
+Problem 4
+
+Write a program to solve the equation, ax + b = 0, for x. If a is 0, print a warning message and exit.
+
+#include <stdio.h>
+
+#include <math.h>
+int main(){
+    
+float a,b,x;
+
+printf("Enter a and b seperated by a comma:");
+
+scanf("%f,%f", &a, &b);
+if (a==0.0) 
+    printf("You cannot divide by 0.\n"); 
+else 
+    printf("Value of x in ax+b=0 is:%f.\n",x=-b/a);
+return 0;
+}
