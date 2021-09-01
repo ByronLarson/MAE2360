@@ -1,0 +1,46 @@
+Lab 1
+01MM/DD/Year
+Section 003
+Larson, Byron
+7148
+
+Problem 1
+
+Reads two real numbers from the keyboard and prints their product.
+
+#include <stdio.h>
+int main(){
+float a, b;  /* to declare that a and b are real variables */
+printf("Enter two real numbers separated by space =");
+scanf("%d %d", &a, &b); /* reads two real numbers and assign them to a and b */
+printf("The product of the two numbers is %d.\n", a*b); /* %d is for integer format*/
+return 0;
+}
+
+
+
+
+Problem 2
+
+Reads a real number and outputs its inverse. If 0 is read, writes a warning message and quit.
+
+#include <stdio.h>
+int main(){
+    
+float a,b;
+
+printf("Enter a number = ");
+
+scanf("%f", &a);
+if (a==0.0) 
+    printf("You entered 0.\n"); 
+else 
+    printf("The inverse is:%f.\n",b=1/a);
+return 0;
+}
+
+
+
+Problem 3
+
+Reads a real number, x, and outputs its sine, i.e. sin x. You need to use math.h and the -lm compile option.
