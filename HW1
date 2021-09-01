@@ -14,15 +14,21 @@ Solve quadratic equation
 #include <math.h>
 int main(){
     
-float a,b,c,x1,x2;
+float a,b,c,bi,x1,x2;
 
 printf("Enter a, b, and c seperated by a comma:");
 
 scanf("%f, %f, %f ", &a, &b, &c);
+bi=b*b-4*a*c/*determine if there are complex numbers with the given numbers*/;
+x1=(-b+sqrt(b*b-4*a*c))/(2*a)/*calculate the x1 of the quadratic*/;
+x2=(-b-sqrt(b*b-4*a*c))/(2*a)/*calculate the x2 of the quadratic*/;
+
 if (a==0.0) 
     printf("You cannot divide by 0.\n"); 
-else 
-    printf("Value of x in the quadratic formula is:%f, %f.\n",(x1=(-b+sqrt(b*b-4*a*c))/2*a),x2=((-b-sqrt(b*b-4*a*c)/2*a)));
+else if (bi<0)
+        printf("Your inputs produce an imaginary number.\n");
+    else
+        printf("Value of x in the quadratic formula is:%f and %f.\n",x1,x2);
 return 0;
 }
 
@@ -49,7 +55,7 @@ return 0;
 
 Problem 3
 
-Write a C program to sum up the first 100, 1000, and then 10000 terms of the series, respectively, to see whether the sum is getting closer to 
+Write a C program to sum up the first 100, 1000, and then 10000 terms of the series, respectively, to see whether the sum is getting closer to pi/4
 
 
 
