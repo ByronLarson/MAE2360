@@ -10,7 +10,7 @@ Reads two real numbers from the keyboard and prints their product.
 
 #include <stdio.h>
 int main(){
-float a, b;  /* to declare that a and b are real variables */
+int a, b;  /* to declare that a and b are real variables */
 printf("Enter two real numbers separated by space =");
 scanf("%d %d", &a, &b); /* reads two real numbers and assign them to a and b */
 printf("The product of the two numbers is %d.\n", a*b); /* %d is for integer format*/
@@ -27,7 +27,7 @@ Reads a real number and outputs its inverse. If 0 is read, writes a warning mess
 #include <stdio.h>
 int main(){
 
-int a,b;
+float a,b;
 
 printf("Enter a number = ");
 
