@@ -27,7 +27,7 @@ Reads a real number and outputs its inverse. If 0 is read, writes a warning mess
 #include <stdio.h>
 int main(){
 
-float a,b;
+int a,b;
 
 printf("Enter a number = ");
 
