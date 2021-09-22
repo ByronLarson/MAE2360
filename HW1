@@ -58,4 +58,60 @@ Problem 3
 Write a C program to sum up the first 100, 1000, and then 10000 terms of the series, respectively, to see whether the sum is getting closer to pi/4
 
 
+Problem 4
+
+Problem 5
+
+Problem 6
+
+#include <stdio.h>
+#include <math.h>
+
+double f(float x)
+{
+    return x-pow(x,3)/6+pow(x,5)/120;
+}
+
+int main ()
+{
+    float i;
+    printf("x          f(x)    sin(x)  \n");
+    printf("--------------------------\n");
+    for(i=0;i<=2;i+=0.1)
+    {
+        printf("%f %f %f \n",i,f(i),sin(i));
+        printf("--------------------------\n");
+    }
+    
+    return 0;
+}
+
+Problem 7
+
+Problem 8
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float i,x,x_old;
+    printf("Enter a guess: ");
+    scanf("%f",&x);
+    while(x<0 || x<1)
+    {
+        printf("Enter a value etween 0 and 1");
+        scanf("%f",&x);
+    }
+    
+    while(x_old!=x)
+    {
+        x_old=x;
+        x=1/(1+(x*x));
+        printf("Print vaules of %0.7f and %0.7f \n",x,x_old);
+    }
+    return 0;
+}
+
+Problem 9
 
