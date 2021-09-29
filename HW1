@@ -203,26 +203,23 @@ int main ()
 
 Problem 8
 
-#include <stdio.h>
-#include <math.h>
-
-int main()
-{
-    float i,x,x_old;
-    printf("Enter a guess: ");
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int i;
+    float x;
+    float old_x;
+    printf("Enter the initial guess = ");
     scanf("%f",&x);
-    while(x<0 || x<1)
+    for(i=0; i<100; i++)
     {
-        printf("Enter a value etween 0 and 1");
-        scanf("%f",&x);
+        old_x = x;
+        //printf("%.3f\t",x);
+        x = 1.0/(1+x*x);
+        
+        if(fabs(x-old_x)<0.0001) break;
     }
-    
-    while(x_old!=x)
-    {
-        x_old=x;
-        x=1/(1+(x*x));
-        printf("Print vaules of %0.7f and %0.7f \n",x,x_old);
-    }
+    printf("A root of x^3 +x -1 is: %.3f\n",x);
     return 0;
 }
 
