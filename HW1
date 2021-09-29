@@ -1,5 +1,5 @@
 HW 1
-01MM/DD/Year
+9/29/21
 Section 003
 Larson, Byron
 7148
@@ -12,26 +12,20 @@ Solve quadratic equation
 
 #include <stdio.h>
 #include <math.h>
-int main(){
-    
-float a,b,c,bi,x1,x2;
-
-printf("Enter a, b, and c seperated by a comma:");
-
-scanf("%f, %f, %f ", &a, &b, &c);
-bi=b*b-4*a*c/*determine if there are complex numbers with the given numbers*/;
-x1=(-b+sqrt(b*b-4*a*c))/(2*a)/*calculate the x1 of the quadratic*/;
-x2=(-b-sqrt(b*b-4*a*c))/(2*a)/*calculate the x2 of the quadratic*/;
-
-if (a==0.0) 
-    printf("You cannot divide by 0.\n"); 
-else if (bi<0)
-        printf("Your inputs produce an imaginary number.\n");
+int main()
+{
+int a,b,c;
+float x1,x2,n;
+printf("Enter a, b, and c seperated by a space:");
+scanf("%d %d %d",&a,&b,&c);
+    if(b*b-4*a*c<0)
+    printf("error");
     else
-        printf("Value of x in the quadratic formula is:%f and %f.\n",x1,x2);
-return 0;
+    n=b*b-4*a*c;
+    x1=(-b+sqrt(n))/(2*a);
+    x2=(-b-sqrt(n))/(2*a);
+    printf("Your roots are: %f and %f",x1,x2);
 }
-
 
 
 Problem 2
@@ -55,7 +49,38 @@ return 0;
 
 Problem 3
 
-Write a C program to sum up the first 100, 1000, and then 10000 terms of the series, respectively, to see whether the sum is getting closer to pi/4
+Write a C program to sum up the first 100, 1000, and then 10000 terms of the series, respectively, to see whether the sum is getting closer to pi/4, an = ((-1)^(n+1))/(2n-1)
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int i,j,k;
+	float sum1=0;
+	float sum2=0;
+	float sum3=0;
+
+	for(i=1;i<=100;i++)
+	{
+    	sum1 =sum1+(pow((-1),i+1)/(2*i-1));
+	}
+	
+	for(j=1;j<=1000;j++)
+	{
+    	sum2 =sum2+(pow((-1),j+1)/(2*j-1));
+	}
+	
+	for(k=1;k<=10000;k++)
+	{
+    	sum3 =sum3+(pow((-1),k+1)/(2*k-1));
+	}
+	printf ("The sum of the first 100 terms is: %f \n",sum1); 
+    printf ("The sum of the first 1000 terms is: %f \n",sum2);
+    printf ("The sum of the first 10000 terms is: %f \n",sum3);
+	
+	return 0;
+}
 
 
 Problem 4
@@ -95,7 +120,29 @@ int main()
 }
 Problem 5
 
+sequence an+2 = -2an+1 + 3an
+
+#include <stdio.h>
+
+int main() 
+{
+
+int i, a0=2, a1=-1, an=0;
+
+for(i=1; i<=16; ++i)
+{
+    an = -2*a1 + 3*a0;
+    a0 = a1;
+    a1 = an;
+}
+
+printf("if n = 17, a17 = %d ", an);
+return 0;
+}
+
 Problem 6
+
+make a table of functions
 
 #include <stdio.h>
 #include <math.h>
@@ -120,6 +167,38 @@ int main ()
 }
 
 Problem 7
+
+The summation from 1 to 11 of 1/n!
+
+#include <iostream>
+
+int factorial (int n)
+{
+
+ int i,fact=1;    
+   
+    for(i=1;i<=n;i++)
+    {    
+      fact=fact*i;    
+    }    
+    return fact;  
+}   
+  
+
+
+int main ()
+{
+    int j;
+    float sum;
+  for(j=1;j<=11;j++)
+    {
+        printf("%d \n",j);
+    	sum =sum + (1.0/factorial (j));
+    	printf("%f \n",sum);
+	}
+	
+	printf ("The summation from 1 to 11 of 1/n!: %f \n",sum);
+}
 
 Problem 8
 
