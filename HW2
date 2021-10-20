@@ -1,4 +1,8 @@
-
+HW 2
+10/20/21
+Section 003
+Larson, Byron
+7148
 
 
 
@@ -39,3 +43,66 @@ int main()
     
     return 0;
 }
+
+
+Problem 2
+x sin x = ex - x sin (x2),
+by the Newton-Raphson method in the interval, [-2, 2].
+
+#include<stdio.h>
+
+#include<math.h>
+
+#define f(x) ((x*sin(x))-exp(x)+(x*sin(x*x)))
+/*d(x) is the derivitive of f(x)*/
+
+#define d(x) ((x*cos(x))+sin(x)-exp(x)+(2*x*x*cos(x*x))+sin(x*x))
+
+
+
+int main()
+
+{
+
+float x,y,a=2,b=2,i;
+
+
+
+x=(a+b)/2;
+
+for(i=1;i<=100;i++)
+
+{
+
+y=x-(f(x)/d(x));
+
+x=y;
+
+}
+
+printf("\n The required root is: %f",x);
+
+}
+Problem 3
+ex - 3 x = 0,
+using the bisection method.
+
+
+Problem 4
+Solve the following 10 simultaneous equations by the Gauss-Jordan elimination method.
+
+
+Problem 5
+Solve the following set of nonlinear equations by the Gauss-Seidel method.
+
+
+Problem 6
+Numerically compute the velocity from the table above using the central difference scheme
+
+
+Problem 7
+Evaluate analytically:
+
+Write a C program to numerically integrate the above using the Simpson rule.
+
+
