@@ -1,1 +1,33 @@
 
+Lab 2
+01MM/DD/Year
+Section 003
+Larson, Byron
+7148
+
+
+Problem 1
+By reviewing the lab note, do the following:
+1. Draw a graph of sin(x3) for - π < x < π.
+2. Draw a graph of (sin x, sin 2x, sin 3x) for 0 < x < 2π together.
+3. Draw a 3-D plot of x*x + sin y
+
+
+
+
+Problem 2
+Write a C program to generate the following table of
+f(x) = x - x3/6 + x5/120
+from x = 0 to x = 4.0 with an increment of 0.1, and store the result to a separate 
+file, table.dat
+
+
+Transfer the above date file from omega.uta.edu to a local folder. 
+Launch gnuplot to read the file, table.dat, and plot the data along with sin x. This 
+way, you can find out how good approximating sin x by the first three terms of 
+Taylor series is. The graph should look like
+
+
+
+
+Problem 3
