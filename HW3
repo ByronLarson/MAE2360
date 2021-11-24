@@ -76,3 +76,70 @@ dataB = load ("data2rk.txt");
 plot (dataA (:,1), dataA (:,2), dataB (:,1), dataB (:,2), x, 2*exp(x));
 
 legend([" dataA y", "dataB y", "Analytic"])
+
+
+Problem 2
+
+Problem 2. 
+a). Numerically solve the following differential equations using C codes for the Euler’s method
+du
+dt = v (1)
+dv
+dt = - k v - u3 + B cos t, (2)
+with
+k = 0.1,     B = 11.0,
+
+#include <stdio.h> 
+#include <math.h> 
+#define k 0.1 
+#define B 11.0
+ 
+double f1(double x, double y1, double y2) 
+{return y2;} 
+ 
+double f2(double x, double y1, double y2) 
+{return -k*y2-pow(y1,3)+B*cos(x);} 
+ 
+int main() 
+{ 
+double h=0.1, y1, y2, x; 
+int i; 
+ 
+y1=1.0; 
+y2=1.0; 
+x=0.0; 
+ 
+for (i=0; i<=1000; i++) 
+{ 
+ printf("x= %lf %lf %lf\n", x, y1, y2); 
+ y1=y1+h*f1(x,y1,y2); 
+ y2=y2+h*f2(x,y1,y2); 
+ x=x+h; 
+} 
+return 0; 
+} 
+
+
+Problem 3. 
+(a) Solve the following two simultaneous equations using Octave:
+
+A = [1 2; 3 4];
+B = [5;6];
+
+y = linsolve(A,B)
+
+fprintf("x = %f, y = %f", y(1,1), y(2,1));
+
+(b) Calculate ∫2
+1
+𝑥3𝑑𝑥
+using quadv
+f = @(x) [x.^3];
+
+quadv(f,1,2)
+and trapz, respectively.
+
+x = [1:0.1:2];
+y = x.^3;
+
+trapz(x,y)
